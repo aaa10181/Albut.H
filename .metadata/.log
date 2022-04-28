@@ -1,0 +1,1054 @@
+!SESSION 2022-04-28 22:45:08.393 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_321
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.springframework.ide.eclipse.batch 4 0 2022-04-28 22:45:10.095
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.batch [962]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.config.ui [981]
+         Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
+           -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+              org.springframework.ide.eclipse.wizard [999]
+                Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+                  -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+                     org.springframework.ide.eclipse.quickfix [991]
+                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.batch.graph
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.batch.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.bestpractices 4 0 2022-04-28 22:45:10.127
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.bestpractices [975]
+  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+       org.springframework.ide.eclipse.quickfix [991]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.boot 4 0 2022-04-28 22:45:10.151
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.boot [976]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"] because it is exposed to package 'javax.inject' from resources org.eclipse.m2e.maven.runtime [osgi.identity; osgi.identity="org.eclipse.m2e.maven.runtime"; type="osgi.bundle"; version:Version="1.5.1.20150109-1819"; singleton:="false"] and javax.inject [osgi.identity; osgi.identity="javax.inject"; type="osgi.bundle"; version:Version="1.0.0.v20091030"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.m2e.maven.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.m2e.maven.runtime
+  org.eclipse.m2e.maven.runtime [osgi.identity; osgi.identity="org.eclipse.m2e.maven.runtime"; type="osgi.bundle"; version:Version="1.5.1.20150109-1819"; singleton:="false"]
+
+Chain 2:
+  org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"]
+    require: (osgi.wiring.bundle=com.google.guava)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="15.0.0.v201403281430"; osgi.wiring.bundle="com.google.guava"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.inject)
+     |
+    export: osgi.wiring.package: javax.inject
+  javax.inject [osgi.identity; osgi.identity="javax.inject"; type="osgi.bundle"; version:Version="1.0.0.v20091030"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.boot.wizard 4 0 2022-04-28 22:45:10.174
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.boot.wizard [977]
+  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.boot
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.boot; bundle-version="4.14.0.202203131612"; singleton:="true"
+       org.springframework.ide.eclipse.boot [976]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"] because it is exposed to package 'javax.inject' from resources org.eclipse.m2e.maven.runtime [osgi.identity; osgi.identity="org.eclipse.m2e.maven.runtime"; type="osgi.bundle"; version:Version="1.5.1.20150109-1819"; singleton:="false"] and javax.inject [osgi.identity; osgi.identity="javax.inject"; type="osgi.bundle"; version:Version="1.0.0.v20091030"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.m2e.maven.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.m2e.maven.runtime
+  org.eclipse.m2e.maven.runtime [osgi.identity; osgi.identity="org.eclipse.m2e.maven.runtime"; type="osgi.bundle"; version:Version="1.5.1.20150109-1819"; singleton:="false"]
+
+Chain 2:
+  org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"]
+    require: (osgi.wiring.bundle=com.google.guava)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="15.0.0.v201403281430"; osgi.wiring.bundle="com.google.guava"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.inject)
+     |
+    export: osgi.wiring.package: javax.inject
+  javax.inject [osgi.identity; osgi.identity="javax.inject"; type="osgi.bundle"; version:Version="1.0.0.v20091030"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.buildship30 4 0 2022-04-28 22:45:10.212
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.buildship30 [978]
+  Unresolved requirement: Require-Bundle: org.eclipse.buildship.core; bundle-version="[3.0.0,4.0.0)"; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.boot.wizard
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.boot.wizard; bundle-version="4.14.0.202203131612"; singleton:="true"
+       org.springframework.ide.eclipse.boot.wizard [977]
+         Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.boot
+           -> Bundle-SymbolicName: org.springframework.ide.eclipse.boot; bundle-version="4.14.0.202203131612"; singleton:="true"
+              org.springframework.ide.eclipse.boot [976]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.boot; bundle-version="3.9.12"
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.boot; bundle-version="4.14.0.202203131612"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"] because it is exposed to package 'javax.inject' from resources org.eclipse.m2e.maven.runtime [osgi.identity; osgi.identity="org.eclipse.m2e.maven.runtime"; type="osgi.bundle"; version:Version="1.5.1.20150109-1819"; singleton:="false"] and javax.inject [osgi.identity; osgi.identity="javax.inject"; type="osgi.bundle"; version:Version="1.0.0.v20091030"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.m2e.maven.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.m2e.maven.runtime
+  org.eclipse.m2e.maven.runtime [osgi.identity; osgi.identity="org.eclipse.m2e.maven.runtime"; type="osgi.bundle"; version:Version="1.5.1.20150109-1819"; singleton:="false"]
+
+Chain 2:
+  org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"]
+    require: (osgi.wiring.bundle=com.google.guava)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="15.0.0.v201403281430"; osgi.wiring.bundle="com.google.guava"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.inject)
+     |
+    export: osgi.wiring.package: javax.inject
+  javax.inject [osgi.identity; osgi.identity="javax.inject"; type="osgi.bundle"; version:Version="1.0.0.v20091030"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.config.ui 4 0 2022-04-28 22:45:10.256
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.config.ui [981]
+  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+       org.springframework.ide.eclipse.wizard [999]
+         Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+           -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+              org.springframework.ide.eclipse.quickfix [991]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.data.core 4 0 2022-04-28 22:45:10.317
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.data.core [983]
+  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+       org.springframework.ide.eclipse.quickfix [991]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.quickfix 4 0 2022-04-28 22:45:10.381
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.quickfix [991]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.webflow.ui 4 0 2022-04-28 22:45:10.443
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui [996]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.webflow.ui.editor [997]
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+              org.springframework.ide.eclipse.config.ui [981]
+                Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
+                  -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+                     org.springframework.ide.eclipse.wizard [999]
+                       Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+                         -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+                            org.springframework.ide.eclipse.quickfix [991]
+                              No resolution report for the bundle.         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.graph
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.graph; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.graph"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.webflow.ui.graph [998]
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
+           -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
+           -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.webflow.ui.editor 4 0 2022-04-28 22:45:10.519
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui.editor [997]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.config.ui [981]
+         Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
+           -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+              org.springframework.ide.eclipse.wizard [999]
+                Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+                  -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+                     org.springframework.ide.eclipse.quickfix [991]
+                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.webflow.ui.graph 4 0 2022-04-28 22:45:10.604
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui.graph [998]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.webflow.ui.editor [997]
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+              org.springframework.ide.eclipse.config.ui [981]
+                Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
+                  -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+                     org.springframework.ide.eclipse.wizard [999]
+                       Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+                         -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+                            org.springframework.ide.eclipse.quickfix [991]
+                              No resolution report for the bundle.         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.wizard 4 0 2022-04-28 22:45:10.655
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.wizard [999]
+  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+       org.springframework.ide.eclipse.quickfix [991]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-04-28 22:45:18.960
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\hh511'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-04-28 22:45:49.795
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-04-28 22:45:49.821
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-04-28 22:46:55.785
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-04-28 22:46:55.810
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+!SESSION 2022-04-28 22:56:44.179 -----------------------------------------------
+eclipse.buildId=4.4.2.M20150204-1700
+java.version=1.8.0_321
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ko_KR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.springframework.ide.eclipse.batch 4 0 2022-04-28 22:56:45.825
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.batch [962]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.config.ui [981]
+         Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
+           -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+              org.springframework.ide.eclipse.wizard [999]
+                Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+                  -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+                     org.springframework.ide.eclipse.quickfix [991]
+                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.batch.graph
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.batch.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.bestpractices 4 0 2022-04-28 22:56:45.861
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.bestpractices [975]
+  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+       org.springframework.ide.eclipse.quickfix [991]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.boot 4 0 2022-04-28 22:56:45.879
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.boot [976]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"] because it is exposed to package 'javax.inject' from resources org.eclipse.m2e.maven.runtime [osgi.identity; osgi.identity="org.eclipse.m2e.maven.runtime"; type="osgi.bundle"; version:Version="1.5.1.20150109-1819"; singleton:="false"] and javax.inject [osgi.identity; osgi.identity="javax.inject"; type="osgi.bundle"; version:Version="1.0.0.v20091030"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.m2e.maven.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.m2e.maven.runtime
+  org.eclipse.m2e.maven.runtime [osgi.identity; osgi.identity="org.eclipse.m2e.maven.runtime"; type="osgi.bundle"; version:Version="1.5.1.20150109-1819"; singleton:="false"]
+
+Chain 2:
+  org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"]
+    require: (osgi.wiring.bundle=com.google.guava)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="15.0.0.v201403281430"; osgi.wiring.bundle="com.google.guava"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.inject)
+     |
+    export: osgi.wiring.package: javax.inject
+  javax.inject [osgi.identity; osgi.identity="javax.inject"; type="osgi.bundle"; version:Version="1.0.0.v20091030"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.boot.wizard 4 0 2022-04-28 22:56:45.899
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.boot.wizard [977]
+  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.boot
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.boot; bundle-version="4.14.0.202203131612"; singleton:="true"
+       org.springframework.ide.eclipse.boot [976]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"] because it is exposed to package 'javax.inject' from resources org.eclipse.m2e.maven.runtime [osgi.identity; osgi.identity="org.eclipse.m2e.maven.runtime"; type="osgi.bundle"; version:Version="1.5.1.20150109-1819"; singleton:="false"] and javax.inject [osgi.identity; osgi.identity="javax.inject"; type="osgi.bundle"; version:Version="1.0.0.v20091030"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.m2e.maven.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.m2e.maven.runtime
+  org.eclipse.m2e.maven.runtime [osgi.identity; osgi.identity="org.eclipse.m2e.maven.runtime"; type="osgi.bundle"; version:Version="1.5.1.20150109-1819"; singleton:="false"]
+
+Chain 2:
+  org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"]
+    require: (osgi.wiring.bundle=com.google.guava)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="15.0.0.v201403281430"; osgi.wiring.bundle="com.google.guava"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.inject)
+     |
+    export: osgi.wiring.package: javax.inject
+  javax.inject [osgi.identity; osgi.identity="javax.inject"; type="osgi.bundle"; version:Version="1.0.0.v20091030"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.buildship30 4 0 2022-04-28 22:56:45.926
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.buildship30 [978]
+  Unresolved requirement: Require-Bundle: org.eclipse.buildship.core; bundle-version="[3.0.0,4.0.0)"; resolution:="optional"
+  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.boot; bundle-version="3.9.12"
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.boot; bundle-version="4.14.0.202203131612"; singleton:="true"
+       org.springframework.ide.eclipse.boot [976]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.boot.wizard
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.boot.wizard; bundle-version="4.14.0.202203131612"; singleton:="true"
+       org.springframework.ide.eclipse.boot.wizard [977]
+         Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.boot
+           -> Bundle-SymbolicName: org.springframework.ide.eclipse.boot; bundle-version="4.14.0.202203131612"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"] because it is exposed to package 'javax.inject' from resources org.eclipse.m2e.maven.runtime [osgi.identity; osgi.identity="org.eclipse.m2e.maven.runtime"; type="osgi.bundle"; version:Version="1.5.1.20150109-1819"; singleton:="false"] and javax.inject [osgi.identity; osgi.identity="javax.inject"; type="osgi.bundle"; version:Version="1.0.0.v20091030"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.m2e.maven.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.m2e.maven.runtime
+  org.eclipse.m2e.maven.runtime [osgi.identity; osgi.identity="org.eclipse.m2e.maven.runtime"; type="osgi.bundle"; version:Version="1.5.1.20150109-1819"; singleton:="false"]
+
+Chain 2:
+  org.springframework.ide.eclipse.boot [osgi.identity; osgi.identity="org.springframework.ide.eclipse.boot"; type="osgi.bundle"; version:Version="4.14.0.202203131612"; singleton:="true"]
+    require: (osgi.wiring.bundle=com.google.guava)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="15.0.0.v201403281430"; osgi.wiring.bundle="com.google.guava"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.inject)
+     |
+    export: osgi.wiring.package: javax.inject
+  javax.inject [osgi.identity; osgi.identity="javax.inject"; type="osgi.bundle"; version:Version="1.0.0.v20091030"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.config.ui 4 0 2022-04-28 22:56:45.975
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.config.ui [981]
+  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+       org.springframework.ide.eclipse.wizard [999]
+         Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+           -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+              org.springframework.ide.eclipse.quickfix [991]
+                No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.data.core 4 0 2022-04-28 22:56:46.038
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.data.core [983]
+  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+       org.springframework.ide.eclipse.quickfix [991]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.quickfix 4 0 2022-04-28 22:56:46.097
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.quickfix [991]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.webflow.ui 4 0 2022-04-28 22:56:46.168
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui [996]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.config.ui [981]
+         Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
+           -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+              org.springframework.ide.eclipse.wizard [999]
+                Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+                  -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+                     org.springframework.ide.eclipse.quickfix [991]
+                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.webflow.ui.editor [997]
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.graph
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.graph; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.graph"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.webflow.ui.graph [998]
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
+           -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
+           -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.webflow.ui.editor 4 0 2022-04-28 22:56:46.224
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui.editor [997]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.config.ui [981]
+         Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
+           -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+              org.springframework.ide.eclipse.wizard [999]
+                Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+                  -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+                     org.springframework.ide.eclipse.quickfix [991]
+                       No resolution report for the bundle.  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+    -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.webflow.ui.graph 4 0 2022-04-28 22:56:46.278
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.webflow.ui.graph [998]
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor.outline.webflow; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+       org.springframework.ide.eclipse.webflow.ui.editor [997]
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.hyperlinks
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.hyperlinks; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+              org.springframework.ide.eclipse.config.ui [981]
+                Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.wizard
+                  -> Bundle-SymbolicName: org.springframework.ide.eclipse.wizard; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+                     org.springframework.ide.eclipse.wizard [999]
+                       Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+                         -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+                            org.springframework.ide.eclipse.quickfix [991]
+                              No resolution report for the bundle.         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.widgets
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.widgets; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+         Unresolved requirement: Import-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph
+           -> Export-Package: org.springframework.ide.eclipse.config.ui.editors.webflow.graph; bundle-symbolic-name="org.springframework.ide.eclipse.config.ui"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Unresolved requirement: Import-Package: org.springframework.ide.eclipse.webflow.ui.editor
+    -> Export-Package: org.springframework.ide.eclipse.webflow.ui.editor; bundle-symbolic-name="org.springframework.ide.eclipse.webflow.ui.editor"; bundle-version="3.9.21.202203211437-RELEASE"; version="0.0.0"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.springframework.ide.eclipse.wizard 4 0 2022-04-28 22:56:46.328
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.springframework.ide.eclipse.wizard [999]
+  Unresolved requirement: Require-Bundle: org.springframework.ide.eclipse.quickfix
+    -> Bundle-SymbolicName: org.springframework.ide.eclipse.quickfix; bundle-version="3.9.21.202203211437-RELEASE"; singleton:="true"
+       org.springframework.ide.eclipse.quickfix [991]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"] because it is exposed to package 'javax.xml.ws.soap' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"] and javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"] via two dependency chains.
+
+Chain 1:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.core.runtime)
+     |
+    provide: osgi.wiring.bundle: org.eclipse.core.runtime
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.2.v20150203-1939"; singleton:="true"]
+
+Chain 2:
+  org.springframework.ide.eclipse.quickfix [osgi.identity; osgi.identity="org.springframework.ide.eclipse.quickfix"; type="osgi.bundle"; version:Version="3.9.21.202203211437-RELEASE"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.springframework.web)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="4.3.23.20190313-CI"; osgi.wiring.bundle="org.springframework.web"
+  org.springframework.web [osgi.identity; osgi.identity="org.springframework.web"; type="osgi.bundle"; version:Version="4.3.23.20190313-CI"]
+    import: (&(osgi.wiring.package=javax.xml.ws.soap)(version>=0.0.0))
+     |
+    export: osgi.wiring.package: javax.xml.ws.soap
+  javax.xml.ws [osgi.identity; osgi.identity="javax.xml.ws"; type="osgi.bundle"; version:Version="2.1.0.v200902101523"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.egit.ui 2 0 2022-04-28 22:57:10.561
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\hh511'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.springsource.ide.eclipse.commons.core 4 0 2022-04-28 22:57:11.262
+!MESSAGE May have failed to replace token 		//window.ide 'dummy'. Replaced/injected later by STS browser integration.
+
+!ENTRY org.springsource.ide.eclipse.commons.core 4 0 2022-04-28 22:57:11.263
+!MESSAGE May have failed to replace token 		//The dummy helps preview/test the page in an external browser.
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-04-28 22:57:13.482
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2022-04-28 22:57:13.497
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!

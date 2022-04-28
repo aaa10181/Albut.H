@@ -1,0 +1,10 @@
+2022-04-28 22:45:44,205 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.test:test1:1.0.0-BUILD-SNAPSHOT @ C:\Users\hh511\Desktop\test\pom.xml.
+2022-04-28 22:45:44,516 [Worker-5] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.test:test1:1.0.0-BUILD-SNAPSHOT @ C:\Users\hh511\Desktop\test\pom.xml.
+2022-04-28 22:45:49,794 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-04-28 22:45:49,801 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2022-04-28 22:45:49,820 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-04-28 22:45:49,821 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
+2022-04-28 22:46:55,784 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-04-28 22:46:55,797 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 4 resources
+2022-04-28 22:46:55,810 [Worker-1] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+2022-04-28 22:46:55,811 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
